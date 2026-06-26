@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irina Canaleta Mir — artista i facilitadora</title>
+<meta name="description" content="Irina Canaleta Mir, artista i facilitadora. Un espai per retrobar la teva energia vital i atrevir-te a ser qui has vingut a ser. Apunta't a la classe online gratuïta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --os:#fbf4ea;          /* os / fons clar */
+    --crema:#f4e8d8;
+    --terracota:#bf5340;
+    --terracota-2:#a8412f;
+    --rosa:#e0998f;
+    --rosa-suau:#efcfc7;
+    --salvia:#6f8466;
+    --salvia-clara:#9aab86;
+    --gold:#d39a55;
+    --cosmic:#3a2c47;       /* lila profund / còsmic */
+    --cosmic-2:#2a2035;
+    --tinta:#2f2722;
+    --tinta-suau:#6a5e54;
+    --linia:rgba(47,39,34,.13);
+    --radi:20px;
+    --ample:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--tinta);
+    background:var(--os);
+    line-height:1.68;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.14;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--ample);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--terracota)}
+
+  /* ---------- TOPBAR ---------- */
+  header{position:absolute;top:0;left:0;right:0;z-index:20}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:24px;max-width:var(--ample);margin:0 auto}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--tinta)}
+  .brand .mark{width:36px;height:36px;flex:0 0 auto}
+  .brand .name{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:500}
+  .brand .name span{font-style:italic;color:var(--terracota)}
+  .menu{display:none;gap:32px;font-size:.92rem;color:var(--tinta-suau)}
+  .menu a:hover{color:var(--terracota)}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:14px 24px;border-radius:999px;font-weight:500;font-size:.92rem;font-family:'Inter',sans-serif;
+    background:var(--terracota);color:#fff;border:1px solid transparent;cursor:pointer;
+    transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(191,83,64,.28);background:var(--terracota-2)}
+  .btn svg{width:15px;height:15px}
+  .btn-line{background:transparent;color:var(--tinta);border-color:var(--linia)}
+  .btn-line:hover{background:rgba(47,39,34,.05);box-shadow:none;color:var(--tinta)}
+  .btn-light{background:var(--os);color:var(--terracota)}
+  .btn-light:hover{background:#fff}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:96vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(120% 90% at 82% 4%, rgba(242,201,138,.6), rgba(242,201,138,0) 55%),
+      radial-gradient(95% 85% at 4% 102%, rgba(111,132,102,.16), rgba(111,132,102,0) 60%),
+      linear-gradient(160deg,#fdf7ee 0%,#f6e7d6 100%)}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background-image:radial-gradient(rgba(47,39,34,.09) 1px,transparent 1.4px);
+    background-size:22px 22px;
+    -webkit-mask-image:linear-gradient(180deg,#000,transparent 76%);mask-image:linear-gradient(180deg,#000,transparent 76%);opacity:.5}
+  .hero-grid{position:relative;z-index:2;max-width:var(--ample);margin:0 auto;padding:124px 24px 92px;width:100%;
+    display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+  .hero-copy{max-width:600px}
+  .badge{display:inline-flex;align-items:center;gap:9px;padding:7px 16px 7px 11px;border-radius:999px;
+    background:rgba(255,255,255,.72);border:1px solid var(--linia);backdrop-filter:blur(6px);
+    font-size:.78rem;font-weight:600;letter-spacing:.01em;color:var(--terracota-2);box-shadow:0 6px 18px rgba(191,83,64,.08)}
+  .badge .dot{width:15px;height:15px;color:var(--gold);flex:0 0 auto}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.5rem);max-width:16ch;margin:.32em 0 .4em;color:var(--tinta);line-height:1.06}
+  .hero h1 em{font-style:italic;color:var(--terracota)}
+  .hero p.lead{font-size:clamp(1.06rem,2.1vw,1.3rem);max-width:42ch;color:var(--tinta-suau);font-weight:300}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+  .hero-proof{display:flex;align-items:center;gap:13px;margin-top:30px;flex-wrap:wrap}
+  .hero-proof .stack{display:flex}
+  .hero-proof .av{width:34px;height:34px;border-radius:50%;border:2px solid var(--os);margin-left:-10px}
+  .hero-proof .av:first-child{margin-left:0}
+  .hero-proof small{color:var(--tinta-suau);font-size:.86rem}
+  .hero-proof small b{color:var(--tinta);font-weight:600}
+  .hero-visual{position:relative;justify-self:center;width:100%;max-width:440px}
+  .visual-card{position:relative;border-radius:30px;overflow:hidden;aspect-ratio:4/5;
+    background:linear-gradient(155deg,#f2c98a 0%,#bf5340 52%,#a8412f 100%);
+    box-shadow:0 44px 80px -30px rgba(191,83,64,.5), 0 0 0 1px rgba(255,255,255,.2) inset}
+  .visual-card svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .chip{position:absolute;display:flex;align-items:center;gap:11px;padding:12px 15px;border-radius:16px;
+    background:rgba(251,244,234,.9);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.7);
+    box-shadow:0 20px 42px -18px rgba(191,83,64,.45);font-size:.84rem;color:var(--tinta);line-height:1.25}
+  .chip b{font-weight:600}
+  .chip .ico{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;flex:0 0 auto;color:#fff}
+  .chip .ico svg{width:17px;height:17px}
+  .chip .free-tag{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--salvia)}
+  .chip-1{top:22px;left:-20px}
+  .chip-2{bottom:28px;right:-18px}
+  .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;color:var(--tinta-suau);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .scroll-hint svg{width:16px;height:16px;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+  /* ---------- SECTION BASICS ---------- */
+  section{position:relative}
+  .pad{padding:98px 0}
+  .center{text-align:center}
+  .lead-h2{font-size:clamp(1.9rem,4.4vw,3rem);max-width:20ch;margin:.4em 0 0}
+  .lead-h2 em{font-style:italic;color:var(--terracota)}
+  .muted{color:var(--tinta-suau)}
+
+  /* ---------- INTRO / QUI SOC ---------- */
+  .intro{background:var(--os)}
+  .intro .grid{display:grid;gap:42px;align-items:start}
+  .intro .big{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3.3vw,2.25rem);font-weight:400;line-height:1.34;letter-spacing:-.01em}
+  .intro .big em{font-style:italic;color:var(--terracota)}
+  .intro .col p{margin-bottom:16px;color:var(--tinta-suau)}
+  .sign{font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;color:var(--terracota);margin-top:4px}
+
+  /* ---------- ACOMPANYAMENT (cards) ---------- */
+  .acomp{background:var(--crema)}
+  .cards{display:grid;gap:22px;margin-top:54px}
+  .card{
+    background:var(--os);border:1px solid var(--linia);border-radius:var(--radi);
+    padding:34px 30px;transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(191,83,64,.12)}
+  .card .ic{width:48px;height:48px;color:var(--terracota);margin-bottom:20px}
+  .card h3{font-size:1.28rem;margin-bottom:9px}
+  .card p{font-size:.96rem;color:var(--tinta-suau)}
+  .card .free{display:inline-block;margin-top:16px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--salvia);border:1px solid var(--salvia-clara);border-radius:999px;padding:6px 13px}
+
+  /* ---------- MANIFEST (banda còsmica) ---------- */
+  .manifest{background:var(--cosmic);color:var(--os);overflow:hidden;position:relative}
+  .manifest .deco{position:absolute;inset:0;opacity:.9}
+  .manifest .deco svg{width:100%;height:100%}
+  .manifest .inner{position:relative;z-index:2;padding:112px 24px;text-align:center;max-width:var(--ample);margin:0 auto}
+  .manifest .eyebrow{color:var(--rosa-suau)}
+  .manifest blockquote{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.8rem,4.6vw,3rem);line-height:1.22;max-width:20ch;margin:.45em auto 0;color:var(--os)}
+  .manifest blockquote em{font-style:italic;color:var(--rosa)}
+  .manifest cite{display:block;margin-top:28px;font-style:normal;font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(251,244,234,.62)}
+
+  /* ---------- PER A QUI ---------- */
+  .pera{background:var(--os)}
+  .feel{display:grid;gap:0;margin-top:50px;border-top:1px solid var(--linia)}
+  .feel .row{display:flex;gap:20px;padding:24px 4px;border-bottom:1px solid var(--linia);align-items:flex-start}
+  .feel .row .n{font-family:'Fraunces',serif;font-style:italic;font-size:1.4rem;color:var(--gold);min-width:40px}
+  .feel .row p{color:var(--tinta-suau);font-size:1.02rem}
+  .feel .row p strong{color:var(--tinta);font-weight:600}
+
+  /* ---------- SOBRE ---------- */
+  .sobre{background:var(--crema)}
+  .sobre-grid{display:grid;gap:46px;align-items:center}
+  .portrait{
+    border-radius:var(--radi);overflow:hidden;aspect-ratio:4/5;position:relative;
+    background:linear-gradient(155deg,var(--gold) 0%,var(--terracota) 48%,var(--rosa) 100%);
+    min-height:360px;display:flex;align-items:flex-end;
+  }
+  .portrait svg{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+  .portrait .ph-note{position:relative;z-index:2;color:rgba(255,255,255,.92);font-size:.76rem;padding:18px 20px;letter-spacing:.04em}
+  .sobre h2{margin-bottom:6px}
+  .sobre .role{color:var(--terracota);font-weight:500;margin-bottom:20px;font-size:.96rem}
+  .sobre p{color:var(--tinta-suau);margin-bottom:15px}
+
+  /* ---------- CTA / FORMULARI ---------- */
+  .contacte{background:var(--os)}
+  .form-card{
+    background:linear-gradient(160deg,var(--crema),var(--rosa-suau));
+    border:1px solid var(--linia);border-radius:28px;
+    padding:clamp(36px,6vw,64px);max-width:760px;margin:0 auto;text-align:center;
+  }
+  .form-card .eyebrow{color:var(--terracota-2)}
+  .form-card h2{font-size:clamp(1.9rem,4.6vw,2.8rem);margin:.35em auto .1em;max-width:18ch}
+  .form-card h2 em{font-style:italic;color:var(--terracota)}
+  .form-card .sub{color:var(--tinta-suau);max-width:46ch;margin:0 auto 30px}
+  .field-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:540px;margin:0 auto}
+  .field{flex:1 1 200px;display:flex;align-items:center;background:var(--os);border:1px solid var(--linia);border-radius:999px;padding:4px 6px 4px 20px}
+  .field input{flex:1;border:0;background:transparent;font-family:'Inter',sans-serif;font-size:.96rem;color:var(--tinta);padding:12px 6px;outline:none}
+  .field input::placeholder{color:#a99c90}
+  .form-card form .btn{margin-top:14px}
+  .form-note{margin-top:16px;font-size:.8rem;color:var(--tinta-suau)}
+  .form-note a{color:var(--terracota);font-weight:500}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--cosmic-2);color:rgba(251,244,234,.72);font-size:.92rem}
+  .foot{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;padding:46px 24px;max-width:var(--ample);margin:0 auto}
+  .foot .brand{color:var(--os)}
+  .foot .brand .name span{color:var(--rosa)}
+  .foot a:hover{color:#fff}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+  .legal{border-top:1px solid rgba(251,244,234,.12);padding:18px 24px;text-align:center;font-size:.78rem;color:rgba(251,244,234,.45)}
+
+  /* ---------- MOTION ---------- */
+  .scrollbar{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;
+    background:linear-gradient(90deg,var(--terracota),var(--gold));
+    transform:scaleX(0);transform-origin:0 50%;transition:transform .1s linear}
+  .reveal{opacity:0;transform:translateY(28px);
+    transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);
+    transition-delay:var(--rd,0ms);will-change:opacity,transform}
+  .reveal.r-l{transform:translateX(-32px)}
+  .reveal.r-r{transform:translateX(32px)}
+  .reveal.r-s{transform:scale(.94)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1!important;transform:none!important;transition:none}
+    .scroll-hint svg{animation:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(min-width:860px){
+    .menu{display:flex}
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:54px}
+    .intro .grid{grid-template-columns:1.05fr 1fr;gap:64px}
+    .cards{grid-template-columns:repeat(3,1fr)}
+    .sobre-grid{grid-template-columns:.82fr 1.18fr}
+  }
+  @media(max-width:859px){
+    .hero-visual{max-width:360px;margin-top:8px}
+    .chip-1{left:-8px}
+    .chip-2{right:-6px}
+  }
+</style>
+</head>
+<body>
+
+<div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <nav class="nav">
+    <a class="brand" href="#top" aria-label="Irina Canaleta Mir, inici">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="8.5" fill="#bf5340"/>
+        <g stroke="#d39a55" stroke-width="1.8" stroke-linecap="round">
+          <path d="M20 3.5v4.5M20 32v4.5M3.5 20h4.5M32 20h4.5"/>
+          <path d="M8.3 8.3l3.2 3.2M28.5 28.5l3.2 3.2M31.7 8.3l-3.2 3.2M11.5 28.5l-3.2 3.2"/>
+        </g>
+      </svg>
+      <span class="name">Irina <span>Canaleta</span></span>
+    </a>
+    <div class="menu">
+      <a href="#qui-soc">Qui soc</a>
+      <a href="#acompanyo">Com t'acompanyo</a>
+      <a href="#sobre">Sobre mi</a>
+    </div>
+    <a href="#classe" class="btn">Classe gratuïta
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="badge">
+        <svg class="dot" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.5 7 7 .3-5.5 4.4 2 6.9L12 17.6 6 20.6l2-6.9L2.5 9.3l7-.3Z"/></svg>
+        Classe online · gratuïta
+      </span>
+      <p class="eyebrow" style="margin-top:20px">Irina Canaleta Mir · artista i facilitadora</p>
+      <h1>Sentir-te <em>especial</em> no té res de dolent. Perquè, de fet, ho ets.</h1>
+      <p class="lead">Un racó tranquil per retrobar la teva energia vital i atrevir-te a ser qui has vingut a ser. Comencem amb una classe online, gratuïta.</p>
+      <div class="hero-cta">
+        <a href="#classe" class="btn">Apunta't a la classe gratuïta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#qui-soc" class="btn btn-line">Coneix la Irina</a>
+      </div>
+      <div class="hero-proof">
+        <div class="stack">
+          <span class="av" style="background:linear-gradient(135deg,#f2c98a,#bf5340)"></span>
+          <span class="av" style="background:linear-gradient(135deg,#e0998f,#a8412f)"></span>
+          <span class="av" style="background:linear-gradient(135deg,#9aab86,#6f8466)"></span>
+        </div>
+        <small>Per a <b>dones</b> que volen tornar a elles.</small>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="visual-card">
+        <svg viewBox="0 0 440 550" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <!-- sol radiant -->
+          <g transform="translate(300 175)">
+            <circle r="74" fill="#fbf4ea" opacity=".42"/>
+            <circle r="46" fill="#fbf4ea" opacity=".55"/>
+            <g stroke="#fbf4ea" stroke-width="3" stroke-linecap="round" opacity=".5">
+              <path d="M0 -112V-90M0 90V112M-112 0H-90M90 0H112"/>
+              <path d="M-79 -79l16 16M63 63l16 16M79 -79l-16 16M-63 63l-16 16"/>
+            </g>
+          </g>
+          <!-- branca botànica -->
+          <g stroke="#fbf4ea" stroke-width="3" stroke-linecap="round" fill="none" opacity=".7">
+            <path d="M150 550c0-150 24-250 96-322"/>
+            <path d="M196 360c-30 4-54-10-66-36 28-6 52 6 66 36Z" fill="#fbf4ea" fill-opacity=".22"/>
+            <path d="M214 300c28 2 50-12 60-40-28-4-50 10-60 40Z" fill="#fbf4ea" fill-opacity=".22"/>
+            <path d="M236 244c-26 6-48-6-60-32 26-8 50 4 60 32Z" fill="#fbf4ea" fill-opacity=".22"/>
+          </g>
+        </svg>
+      </div>
+      <div class="chip chip-1">
+        <span class="ico" style="background:var(--terracota)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"/></svg>
+        </span>
+        <div><b>La classe online</b><br><span class="free-tag">Gratuïta</span></div>
+      </div>
+      <div class="chip chip-2">
+        <span class="ico" style="background:var(--salvia)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg>
+        </span>
+        <div><b>Tornar a tu</b><br><span style="color:var(--tinta-suau)">sense pressa</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">desliça
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </div>
+</section>
+
+<!-- ================= QUI SOC ================= -->
+<section class="intro pad" id="qui-soc">
+  <div class="wrap">
+    <div class="grid">
+      <div class="col">
+        <p class="eyebrow">Qui soc</p>
+        <p class="big" style="margin-top:18px">Em dic Irina Canaleta Mir i soc <em>artista i facilitadora</em>. Acompanyo persones a retrobar allò que les fa úniques i a deixar de fer-se petites per por de destacar.</p>
+        <p class="sign">— Irina</p>
+      </div>
+      <div class="col">
+        <p>Hi ha moltes persones —sobretot dones— que no acaben d'explotar tot el seu potencial per por de brillar massa. Jo treballo justament aquí: en aquell <strong>brilli-brilli</strong> que de vegades aprenem a amagar.</p>
+        <p>Ho faig des de l'art, des de la calma i des d'un lloc segur on poder mostrar-te tal com ets, sense pressa i sense màscares.</p>
+        <p class="muted">No és una recepta tancada. És un camí per <strong>tornar a tu</strong> i recordar que aquesta vida és irrepetible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COM T'ACOMPANYO ================= -->
+<section class="acomp pad" id="acompanyo">
+  <div class="wrap">
+    <p class="eyebrow center">Com t'acompanyo</p>
+    <h2 class="lead-h2 center" style="margin-left:auto;margin-right:auto">Tres maneres de <em>començar</em></h2>
+    <div class="cards">
+
+      <div class="card">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="24" cy="24" r="9"/>
+          <path d="M24 6v5M24 37v5M6 24h5M37 24h5M11 11l3.5 3.5M33.5 33.5L37 37M37 11l-3.5 3.5M14.5 33.5L11 37"/>
+        </svg>
+        <h3>La classe online</h3>
+        <p>Una primera trobada en directe per descobrir, de manera pràctica, com retrobar la teva energia vital. Et pots apuntar des d'aquí mateix.</p>
+        <span class="free">Gratuïta</span>
+      </div>
+
+      <div class="card">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 40c-9-7-16-13-16-22a8 8 0 0 1 16-2 8 8 0 0 1 16 2c0 9-7 15-16 22Z"/>
+        </svg>
+        <h3>Les sessions</h3>
+        <p>Espais en grup, en directe, per fer un treball més profund: cuidar el teu nen interior i donar-li un entorn segur per créixer.</p>
+      </div>
+
+      <div class="card">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M24 6l4.5 11.5L40 22l-11.5 4.5L24 38l-4.5-11.5L8 22l11.5-4.5Z"/>
+        </svg>
+        <h3>El teu brilli-brilli</h3>
+        <p>Hi ha una cosa misteriosa que tens tu, i només tu. Treballem-la perquè torni a lluir, sense por de qui s'enlluerni pel camí.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= MANIFEST ================= -->
+<section class="manifest">
+  <div class="deco" aria-hidden="true">
+    <svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#fbf4ea">
+        <circle cx="200" cy="110" r="1.6" opacity=".5"/><circle cx="360" cy="200" r="1.2" opacity=".4"/>
+        <circle cx="540" cy="80" r="1.8" opacity=".55"/><circle cx="720" cy="160" r="1.2" opacity=".35"/>
+        <circle cx="900" cy="100" r="1.5" opacity=".5"/><circle cx="1080" cy="210" r="1.3" opacity=".4"/>
+        <circle cx="1240" cy="120" r="1.7" opacity=".55"/><circle cx="1340" cy="240" r="1.2" opacity=".35"/>
+        <circle cx="120" cy="320" r="1.3" opacity=".4"/><circle cx="640" cy="360" r="1.5" opacity=".45"/>
+        <circle cx="1180" cy="380" r="1.4" opacity=".4"/>
+      </g>
+      <g stroke="#e0998f" stroke-width="1.5" stroke-linecap="round" opacity=".5">
+        <path d="M270 300l5-13 5 13 13 5-13 5-5 13-5-13-13-5Z" fill="#e0998f"/>
+        <path d="M1130 290l4-10 4 10 10 4-10 4-4 10-4-10-10-4Z" fill="#e0998f"/>
+      </g>
+    </svg>
+  </div>
+  <div class="inner">
+    <p class="eyebrow">El que crec</p>
+    <blockquote>Aquesta vida és un camí irrepetible. <em>No esperis a reencarnar-te</em> per ser qui has vingut a ser.</blockquote>
+    <cite>Irina Canaleta Mir</cite>
+  </div>
+</section>
+
+<!-- ================= PER A QUI ================= -->
+<section class="pera pad">
+  <div class="wrap">
+    <p class="eyebrow center">Aquest espai és per a tu si…</p>
+    <h2 class="lead-h2 center" style="margin-left:auto;margin-right:auto">Potser t'hi reconeixes</h2>
+    <div class="feel">
+      <div class="row"><span class="n">01</span><p>Sents que <strong>t'has fet petita</strong> per no destacar massa, i comences a notar que això et pesa.</p></div>
+      <div class="row"><span class="n">02</span><p>Tens una <strong>energia vital</strong> que intueixes que et pot portar lluny, però no saps ben bé per on començar.</p></div>
+      <div class="row"><span class="n">03</span><p>Vols un <strong>lloc segur</strong> on mostrar-te tal com ets, sense pressa, sense màscares i sense judicis.</p></div>
+      <div class="row"><span class="n">04</span><p>T'agradaria <strong>tornar a tu</strong>: a la teva creativitat, a la teva veu, a allò que et fa única.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE ================= -->
+<section class="sobre pad" id="sobre">
+  <div class="wrap">
+    <div class="sobre-grid">
+      <div class="portrait">
+        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(300 110)">
+            <circle r="46" fill="#fbf4ea" opacity=".4"/>
+            <g stroke="#fbf4ea" stroke-width="2" stroke-linecap="round" opacity=".6">
+              <path d="M0 -70V-58M0 58V70M-70 0H-58M58 0H70M-50 -50l8 8M42 42l8 8M50 -50l-8 8M-42 42l-8 8"/>
+            </g>
+          </g>
+          <path d="M0 380 C 110 340 220 380 400 350 L400 500 L0 500Z" fill="#a8412f" opacity=".35"/>
+          <g stroke="#fbf4ea" stroke-width="2" opacity=".55" stroke-linecap="round" fill="none">
+            <path d="M200 470V250"/>
+            <path d="M200 330c-42 0-70-28-70-70 42 0 70 28 70 70Z"/>
+            <path d="M200 288c36 0 60-24 60-60-36 0-60 24-60 60Z"/>
+          </g>
+        </svg>
+        <p class="ph-note">[ Foto de la Irina — pendent ]</p>
+      </div>
+      <div>
+        <p class="eyebrow">Sobre mi</p>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,4vw,2.6rem)">Una mica de mi, per si encara no ens coneixem</h2>
+        <p class="role">Artista i facilitadora</p>
+        <p>Treballo des de l'art i l'acompanyament perquè cada persona pugui retrobar la seva manera única d'estar al món. M'agrada la transparència, la vulnerabilitat i les converses que toquen de veritat.</p>
+        <p class="muted">[ Aquí va la teva història real en 2–3 paràgrafs: com vas arribar a la facilitació, què t'hi va portar i què et mou avui. Tu mateixa la pots ajustar amb les teves paraules. ]</p>
+        <a href="#classe" class="btn" style="margin-top:14px">Comencem junts
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLASSE / FORMULARI ================= -->
+<section class="contacte pad" id="classe">
+  <div class="wrap">
+    <div class="form-card">
+      <p class="eyebrow">Comença per aquí</p>
+      <h2>Apunta't a la <em>classe online gratuïta</em></h2>
+      <p class="sub">Deixa'm el teu nom i el teu correu i et faré arribar tots els detalls per participar-hi. Sense compromís: és el primer pas per conèixer-nos.</p>
+      <form onsubmit="return false;" novalidate>
+        <div class="field-row">
+          <label class="field"><span class="sr-only"></span><input type="text" name="nom" placeholder="El teu nom" autocomplete="given-name"></label>
+          <label class="field"><input type="email" name="email" placeholder="El teu correu" autocomplete="email"></label>
+        </div>
+        <button type="submit" class="btn">Vull apuntar-m'hi
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+      <p class="form-note">O escriu-me directament per <a href="https://www.instagram.com/paucanalpau/" target="_blank" rel="noopener">Instagram</a>. Et responc jo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="foot">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="8.5" fill="#e0998f"/>
+        <g stroke="#d39a55" stroke-width="1.8" stroke-linecap="round">
+          <path d="M20 3.5v4.5M20 32v4.5M3.5 20h4.5M32 20h4.5"/>
+          <path d="M8.3 8.3l3.2 3.2M28.5 28.5l3.2 3.2M31.7 8.3l-3.2 3.2M11.5 28.5l-3.2 3.2"/>
+        </g>
+      </svg>
+      <span class="name">Irina <span>Canaleta</span></span>
+    </a>
+    <div class="foot-links">
+      <a href="#qui-soc">Qui soc</a>
+      <a href="#acompanyo">Com t'acompanyo</a>
+      <a href="#classe">Classe gratuïta</a>
+      <a href="https://www.instagram.com/paucanalpau/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="legal">Irina Canaleta Mir · artista i facilitadora · Proposta visual — dades de contacte pendents</div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var bar = document.getElementById("scrollbar");
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? h.scrollTop / max : 0;
+    if(bar) bar.style.transform = "scaleX(" + p + ")";
+  }
+  document.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  if(reduce) return;
+
+  var revSel = ".badge,.hero h1,.hero p.lead,.hero-cta,.hero-proof,.hero-visual,.eyebrow,.lead-h2,.intro .big,.intro .col p,.sign,.card,.feel .row,.portrait,.sobre .role,.sobre h2,.sobre p,.sobre .btn,.manifest blockquote,.manifest cite,.form-card";
+  document.querySelectorAll(revSel).forEach(function(el){ el.classList.add("reveal"); });
+  document.querySelectorAll(".portrait,.hero-visual").forEach(function(el){ el.classList.add("r-r"); });
+  document.querySelectorAll(".sobre h2,.sobre .role,.sobre p,.intro .big").forEach(function(el){ el.classList.add("r-l"); });
+  document.querySelectorAll(".card").forEach(function(el){ el.classList.add("r-s"); });
+
+  document.querySelectorAll(".cards,.feel").forEach(function(grid){
+    Array.prototype.forEach.call(grid.children, function(c,i){ c.style.setProperty("--rd", (i*80)+"ms"); });
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, {threshold:.12, rootMargin:"0px 0px -7% 0px"});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
